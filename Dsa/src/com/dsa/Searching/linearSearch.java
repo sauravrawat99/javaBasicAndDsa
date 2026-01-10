@@ -1,7 +1,7 @@
-package Searching;
- public class LinearSearch {
+package com.dsa.Searching;
+ public class linearSearch {
     // Linear Search Method
-    static int linearSearch(int[] arr, int target) {
+    static int LinearSearch(int[] arr, int target) {
 
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == target) {
@@ -17,7 +17,7 @@ package Searching;
         int[] arr = {10, 25, 30, 45, 50};
         int target = 30;
 
-        int result = linearSearch(arr, target);
+        int result = LinearSearch(arr, target);
 
         if (result == -1) {
             System.out.println("Element not found");

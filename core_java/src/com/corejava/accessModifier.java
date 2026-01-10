@@ -1,5 +1,5 @@
-package AccessModifier;
-public class AccessModifier{
+package core_java.src.com.corejava;
+public class accessModifier{
     public static void main(String[] args) {
 
         Student s1 = new Student();

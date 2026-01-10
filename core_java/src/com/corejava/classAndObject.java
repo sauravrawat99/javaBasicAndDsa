@@ -1,5 +1,6 @@
-public class ClassAndObject {
-    public static void main(String[] args) {
+package core_java.src.com.corejava;
+public class classAndObject {
+    static void main(String[] ignoredArgs) {
 
         Animal animal = new Animal();   // object created
 
@@ -20,10 +21,12 @@ class Animal {
     }
 
     void setAge(int newAge) {
+
         age = newAge;
     }
 
     String getName() {
+
         return name;
     }
 

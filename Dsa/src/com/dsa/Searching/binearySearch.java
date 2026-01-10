@@ -1,8 +1,8 @@
-package Searching;
-public class BinearySearch {
+package com.dsa.Searching;
+public class binearySearch {
 
     // Binary Search Method
-    static int binarySearch(int[] arr, int target) {
+    static int BinarySearch(int[] arr, int target) {
 
         int start = 0;
         int end = arr.length - 1;
@@ -30,7 +30,7 @@ public class BinearySearch {
         int[] arr = {10, 20, 30, 40, 50};  // must be sorted
         int target = 40;
 
-        int result = binarySearch(arr, target);
+        int result = BinarySearch(arr, target);
 
         if (result == -1) {
             System.out.println("Element not found");
