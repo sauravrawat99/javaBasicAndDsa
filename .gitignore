@@ -1,4 +1,6 @@
-out
-.idea
-github.md
-qodana.yaml
+# IntelliJ / build output
+out/
+.idea/
+
+# Compiled files
+*.class
