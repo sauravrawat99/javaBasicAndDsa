@@ -1,0 +1,7 @@
+# IntelliJ / build output
+out/
+.idea/
+github.md
+qodana.yaml
+# Compiled files
+*.class
