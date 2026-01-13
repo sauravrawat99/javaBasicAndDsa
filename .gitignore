@@ -1,6 +1,0 @@
-# IntelliJ / build output
-out/
-.idea/
-
-# Compiled files
-*.class
