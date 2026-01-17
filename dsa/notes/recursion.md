@@ -1,6 +1,19 @@
-what is recursion
-Jab ek function khud ko hi call karta hai
-use Recursion kehte hain
+** what is recursion
+====> The recursions is technique where functions solve a problem
+by calling its self on a smaller input utils  base on conditions on met 
+
+** why base case is important
+=======> The base case is very important in recursion because it determines
+the stoping conditions for the recursive function
+
+** what is stack overflow
+======>The stack overflow is a classic programming error 
+
+it happens when a program uses to much space on the call stack(usually because of infinite recursion 
+deep functions call
+
+
+
 
 Ek kaam ko chhote same kaam me tod dena
 

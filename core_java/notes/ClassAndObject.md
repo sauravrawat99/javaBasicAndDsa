@@ -27,3 +27,10 @@ Encapsulation:
 
 Example:
 Animal a = new Animal();
+-------------------important----------------
+
+Interview One-Liners 🔥
+Class does not occupy memory
+Object occupies memory in heap
+Reference variable stored in stack
+Multiple objects can be created from one class
