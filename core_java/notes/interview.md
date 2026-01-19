@@ -52,7 +52,7 @@ What is class
 The class is a blueprint or template of object
 define -variable and methods
 
-and its does'n occupy memory
+and its doesn't occupy memory
 
 ex class classname{variable,methods}
 ---------------------------------------------------------------------------------------------------
