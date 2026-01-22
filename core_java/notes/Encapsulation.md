@@ -1,6 +1,6 @@
 Encapsulation:
-- Binding data and methods together
-- Data hiding concept in Java
+Encapsulation means wrapping data (variables) and methods (functions) into a single
+unit (class) and controlling access to that data.
 
 How to achieve?
 1. Make variables private
