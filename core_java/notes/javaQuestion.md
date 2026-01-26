@@ -9,7 +9,7 @@ why java platform independent
 -java platform independent because 
 *java code compile in bytecode, Not machine code 
 *This bytecode run on jvm (java virtual machine)
-*Each os has on jvm  
+*Each os has own jvm  
 
 mmi==Java is platform-independent because compiled bytecode runs on JVM, not directly on the operating system.
 -----------------------------------------------------------------------------------------------------------
@@ -78,6 +78,7 @@ Difference between == and .equals()?
 | Cannot be overridden                | Can be overridden           |
 
 mmi=> == compares memory references, while .equals() compares actual object content.
+--------------------------------------------------------------------------------------------------------
 
 What is Class and Object?
 -
@@ -182,29 +183,186 @@ To use primitives as objects
 mmi=Wrapper classes convert primitive data types into objects so they can be used where objects are required.
 --------------------------------------------------------------------------------------------------
 Supports autoboxing and unboxing
+-
+Autoboxing and unboxing are feacher in java that automatic convert between primitive type and auto object
+
+Autoboxing 
+automatic conversion of primitive --> wrapper object
+example  int a = 10;
+Integer i = a;   // autoboxing
+
+unboxing
+Automatic conversion of wrapper object → primitive.
+integer i=20;
+int a=i // unboxing
+
+mmi==Autoboxing converts primitive to object automatically, and unboxing converts object back to primitive.
+---------------------------------------------------------------------------------------------------------------------------------
+
 boolean → BooleanDifference between primitive and non-primitive data types?
+-
+Difference between Primitive and Non-Primitive Data Types
+| Primitive               | Non-Primitive                  |
+| ----------------------- | ------------------------------ |
+| Stores **actual value** | Stores **reference (address)** |
+| Predefined in Java      | Created by programmer          |
+| Uses **less memory**    | Uses **more memory**           |
+| Cannot call methods     | Can call methods               |
+| Faster                  | Comparatively slower           |
+
+primitive Data Types:
+int, float, double, char, boolean
+
+👉 boolean
+
+Non-Primitive Data Types:
+String, Array, Class, Object, Interface, Boolean
+
+👉 Boolean
+
+mmi=Primitive data types store values directly, while non-primitive data types store references to objects.
+------------------------------------------------------------------------------------------------------------
+
 
 What is immutable object?
+-
+An immutable object after the creations do not change or modify
+
+Explanation
+Once an immutable object is created, its data cannot be modified
+Any change creates a new object
+
+String s = "Java";
+s = s.concat(" World");
+
+mmi==An immutable object is an object whose state cannot be changed once it is created.-
+----------------------------------------------------------------------------------------------------------------------------------
+=----------------------------------------------------------------------------------------------------------------------
 
 🔹 OOPs (VERY IMPORTANT)
 
 What are the 4 pillars of OOP?
+-
+The 4 pillars of Object-Oriented Programming (OOP) are:
+
+1️⃣ Encapsulation
+2️⃣ Inheritance
+3️⃣ Polymorphism
+4️⃣ Abstraction
+
+The four pillars of OOP are Encapsulation, Inheritance, Polymorphism, and Abstraction.
+---------------------------------------------------------------------------------------------------------------------
+
 
 Explain Encapsulation with example
+-
+Encapsulation means wrapping data (variables) and code (methods) into a single
+unit and restricting direct access to data.
+
 
 Explain Inheritance
-
 Types of inheritance in Java
 
+class Employee {
+private int salary;
+
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
+
+    public int getSalary() {
+        return salary;
+    }
+}
+Explanation
+salary is private → cannot be accessed directly
+Access is controlled using methods
+
+Encapsulation protects data by restricting direct access and allowing controlled access through methods.
+---------------------------------------------------------------------------------------------------------
 Why multiple inheritance not supported in Java?
+- 
+Java does not support multiple inheritance using classes to avoid ambiguity problem(diamond problem)
+
+if a class inherit 2 more classes have same method
+class A {
+void show() {}
+}
+
+class B {
+void show() {}
+}
+
+class C extends A, B {   // ❌ confusion
+}
+
+JVM cannot decide which show() method to call — from A or B.
+This creates ambiguity, so Java does not allow multiple inheritance with classes.
+
+How Java solves this?
+Java supports multiple inheritance using interfaces
+Because interfaces provide method declaration only, not implementation (before Java 8)
+
+mmi==ava does not support multiple inheritance with classes to avoid ambiguity and diamond problem.
+------------------------------------------------------------------------------------------------------
 
 What is Polymorphism?
+-
+Polymorphism means same method but different behavior
+
+in java polymorphism  achieve by 
+method Overloading(compile time )
+method overriding(run time)
+
+Payment p;
+
+p = new CardPayment();
+p.pay();
+
+p = new UpiPayment();
+p.pay();
+
+Same method call → different behavior.
+
+mmi===Polymorphism allows one method or object to perform different actions based on the situation.
+------------------------------------------------------------------------------------------------------
 
 Difference between compile-time and runtime polymorphism
+-
+polymorphism 
+| Compile-time Polymorphism                | Runtime Polymorphism                |
+| ---------------------------------------- | ----------------------------------- |
+| Achieved by **method overloading**       | Achieved by **method overriding**   |
+| Method call resolved at **compile time** | Method call resolved at **runtime** |
+| Based on **method signature**            | Based on **object type**            |
+| Faster                                   | Slightly slower                     |
+| Uses **static binding**                  | Uses **dynamic binding**            |
+ 
+mmi==Compile-time polymorphism uses method overloading, while runtime polymorphism uses method overriding.
+----------------------------------------------------------------------------------------------------
 
 What is method overloading?
+-
+Method overloading means having multiple methods with the same name but different parameters in the same class.
+Rules
 
+Method name must be same
+Parameters must be different (number, type, or order)
+Return type alone cannot change
+
+class Test {
+
+      void add(int a, int b) {
+      System.out.println(a + b);
+}
+
+    void add(int a, int b, int c) {
+        System.out.println(a + b + c);
+    }
+}
+------------------------------------------------------------------------------------
 What is method overriding?
+-
 
 Can we override a static method?
 
