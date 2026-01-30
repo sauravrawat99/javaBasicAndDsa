@@ -363,132 +363,1266 @@ class Test {
 ------------------------------------------------------------------------------------
 What is method overriding?
 -
+-The method overriding means redefine parent class method in child class with the same parameter
+same name and same return type
+
+conditions
+must be inheritance
+method name must be same
+parameter name must be same 
+return type same must be or 
+access modifiers cannot be restrictive
+
+example
+class Parent {
+void show() {
+System.out.println("Parent");
+}
+}
+
+class Child extends Parent {
+void show() {
+System.out.println("Child");
+}
+}
+
+mmi==Method overriding allows a child class to provide its own implementation of a parent class method.
+--------------------------------------------------------------------------------------------------------
 
 Can we override a static method?
+-
+no, cannot we override a static method
+
+reason
+static method belong to class not in object
+override work on run time in polymorphism
+static method resolve on compile time
+
+So, static methods support method hiding, not overriding.
+
+Static methods cannot be overridden because they belong to the class and are resolved at compile time.
+----------------------------------------------------------------------------------------------------
 
 What is super keyword?
+-
+the super keyword use to refer immediate parent class object
+
+Uses of super
+1️⃣ To access parent class variables
+2️⃣ To call parent class methods
+3️⃣ To call parent class constructor
+
+class Parent {
+int x = 10;
+}
+
+class Child extends Parent {
+int x = 20;
+
+    void show() {
+        System.out.println(super.x); // 10
+    }
+}
+
+The super keyword is used to access parent class members and constructors.
+----------------------------------------------------------------------------------------------------
 
 What is this keyword?
+-
+this keyword refer to the current object in the class
+
+Uses of this
+1️⃣ To differentiate instance variable and local variable
+2️⃣ To call current class methods
+3️⃣ To call current class constructor
+
+example
+class Test {
+int x;
+
+    Test(int x) {
+        this.x = x;
+    }
+}
+ 
+mmi==The this keyword refers to the current object of the class.
+-----------------------------------------------------------------------------------------------------------------
 
 What is abstraction?
+-
+Abstraction means hiding implementation details and showing only essential feacher to the user
+
+In Java, abstraction is achieved using:
+1️⃣ Abstract class
+2️⃣ Interface
+
+🔹 Example (real-life)
+Car → you use accelerator & brake
+You don’t know internal engine logic
+
+mmi==Abstraction hides internal implementation and shows only necessary functionality.
+----------------------------------------------------------------------------------------------
 
 Difference between abstract class and interface
+-abstract vs interface
+| Abstract Class                                 | Interface                              |
+| ---------------------------------------------- | -------------------------------------- |
+| Can have **abstract and non-abstract methods** | Methods are **abstract by default**    |
+| Supports **method implementation**             | No implementation (before Java 8)      |
+| Supports **instance variables**                | Only **public static final constants** |
+| Supports **constructors**                      | Does not support constructors          |
+| Supports **single inheritance**                | Supports **multiple inheritance**      |
+| Uses `extends` keyword                         | Uses `implements` keyword              |
+
+mmi=Abstract class can have implemented methods, while interface is used for full abstraction and multiple inheritance.
+------------------------------------------------------------------------------------------------------------------
 
 Can interface have methods with body?
+-
+Yes, interfaces can have methods with body — from Java 8 onwards.
+
+Types of methods with body in interface
+
+1️⃣ Default methods
+Written using default keyword
+Can have method body
+
+default void show() {
+System.out.println("Default method");
+}
+
+2️⃣ Static methods
+Can have method body
+Called using interface name
+
+static void test() {
+System.out.println("Static method");
+}
+
+mmi=From Java 8 onwards, interfaces can have default and static methods with implementation.
+--------------------------------------------------------------------------------------------
 
 Can abstract class have constructor?
+-
+Yes, an abstract class can have a constructor.
+
+🔹 Reason
+Constructor is used to initialize variables
+When a child class object is created,
+the abstract class constructor is called first
+
+🔹 Example
+abstract class A {
+A() {
+System.out.println("Abstract class constructor");
+}
+}
+
+class B extends A {
+B() {
+super();
+}
+}
+
+Yes, abstract classes can have constructors to initialize common data.
+---------------------------------------------------------------------------------------------------------
 
 🔹 String (MOST ASKED 🔥)
+-------------------------------------------------------------------------------------------------------
 
 Difference between String, StringBuilder, StringBuffer
+-
+s
+| Feature         | String        | StringBuilder | StringBuffer              |
+| --------------- | ------------- | ------------- | ------------------------- |
+| Mutability      | **Immutable** | **Mutable**   | **Mutable**               |
+| Thread-safe     | ❌ No          | ❌ No          | ✅ Yes                     |
+| Performance     | Slow          | Fast          | Slower than StringBuilder |
+| Synchronization | No            | No            | Yes                       |
+| Introduced in   | Java 1.0      | Java 1.5      | Java 1.0                  |
+
+Key Points
+
+String → value cannot be changed
+StringBuilder → fast, single-threaded environment
+StringBuffer → thread-safe, multi-threaded environment
+
+mmi String is immutable, StringBuilder is mutable and fast, and StringBuffer is mutable but thread-safe.
+=====================================================================================================
 
 Why String is immutable?
+-
+String is immutable in Java for security, performance, and memory optimization.
+
+Reasons
+
+1️⃣ Security
+Strings are used in:
+passwords
+database URLs
+file paths
+If mutable, values could be changed and cause security issues.
+
+2️⃣ String Constant Pool (Memory Optimization)
+Same string value can be shared
+Immutability prevents data corruption.
+
+3️⃣ Thread Safety
+Immutable objects are automatically thread-safe.
+
+4️⃣ Caching of hashcode
+Improves performance in collections like HashMap.
+
+String is immutable to provide security, memory efficiency, and thread safety.
+----------------------------------------------------------------------------------------------------
 
 What is String Constant Pool?
+-
+The String Constant Pool (SCP) is a special memory area in heap where String literals are stored.
+
+Explanation
+When a String literal is created, JVM first checks SCP
+If the same value already exists, it reuses the reference
+Otherwise, a new String object is created in SCP
+
+string s1 = "Java";
+String s2 = "Java";
+Both s1 and s2 point to the same object in SCP.
+
+mmi=String Constant Pool is a memory area where JVM stores and reuses String literals to save memory.-
+----------------------------------------------------------------------------------------
+
 
 Difference between:
 
 String s1 = "Java";
 String s2 = new String("Java");
+| Point                       | String Literal           | new String()                  |
+| --------------------------- | ------------------------ | ----------------------------- |
+| Memory location             | **String Constant Pool** | **Heap memory**               |
+| Object creation             | Reuses existing object   | Creates new object every time |
+| Memory efficient            | Yes                      | No                            |
+| Reference comparison (`==`) | Same reference           | Different reference           |
 
+
+String s1 = "Java";
+String s2 = "Java";
+String s3 = new String("Java");
+
+System.out.println(s1 == s2); // true
+System.out.println(s1 == s3); // false
+System.out.println(s1.equals(s3)); // true
+
+mmi=String literal is stored in String Constant Pool, while new String() creates a new object in heap memory.
+-------------------------------------------------------------------------------------------------
 
 How many objects are created in above code?
+-
+String s1 = "Java";
+String s2 = new String("Java");
+
+🔹 Objects created: 2
+🔸 Explanation
+1️⃣ "Java" → created once in String Constant Pool
+2️⃣ new String("Java") → creates one new object in heap
+
+So total objects =
+👉 1 (SCP) + 1 (Heap) = 2 objects
+
+Two objects are created: one in String Constant Pool and one in heap memory.
+---------------------------------------------------------------------------------------------------
 
 Can we change String value?
+-
+No, we cannot change the value of a String in Java.
+
+🔹 Reason
+
+String is immutable
+Any modification creates a new String object
+Original String remains unchanged
+
+🔹 Example
+String s = "Java";
+s = s.concat(" World");
+
+
+Here:
+"Java" remains same
+New object "Java World" is created
+
+mm-String values cannot be changed because String objects are immutable; any modification creates a new object.
+------------------------------------------------------------------------------------------------------------------
 
 Why StringBuilder is faster than String?
+-
+StringBuilder is faster than String because it is mutable.
+
+🔹 Explanation
+
+String is immutable → every modification creates a new object
+StringBuilder is mutable → modifies the same object
+No extra object creation
+Less memory usage and faster execution
+
+mmi=StringBuilder is faster because it is mutable and does not create new objects during modification.
+----------------------------------------------------------------------------------------
 
 🔹 Memory & JVM
+===========================================================================================================================
 
 What is JVM memory structure?
+-
+The JVM memory structure defines how memory is divided while executing a Java program.
 
+🔹 JVM Memory Areas
+
+1️⃣ Method Area
+Stores class metadata
+Methods, static variables, constants
+
+2️⃣ Heap Area
+Stores objects and instance variables
+Shared among all threads
+
+3️⃣ Stack Area
+Stores method calls and local variables
+Each thread has its own stack
+
+4️⃣ PC Register
+Holds current executing instruction address
+
+5️⃣ Native Method Stack
+Used for native (non-Java) methods
+
+
+JVM memory is divided into Method Area, Heap, Stack, PC Register, and Native Method Stack.
 Difference between Stack and Heap memory
+---------------------------------------------------------------------------------------------------------
 
 What is Garbage Collection?
+-
+Garbage Collection is the process by which JVM automatically removes unused objects from heap memory.
+🔹 Explanation
+
+Objects with no reference become eligible for GC
+JVM frees memory automatically
+Improves performance and prevents memory leaks
+
+Garbage Collection automatically removes unused objects from heap memory to free space.
+----------------------------------------------------------------------------------------------
 
 Who triggers Garbage Collection?
+-
+Garbage Collection is triggered by the JVM automatically.
+Explanation
+
+1 Programmer cannot force GC
+1 JVM decides when to run GC based on:
+
+ memory usage
+heap space availability
+System.gc() can request GC, but JVM may ignore it.
+
+Garbage Collection is automatically triggered by the JVM, not by the programmer.
+-------------------------------------------------------------------------------------------
 
 Can we force Garbage Collection?
+-
+No, we cannot force Garbage Collection in Java.
+
+Explanation
+
+System.gc() or Runtime.getRuntime().gc() only requests GC
+JVM may ignore the request
+Final decision is always taken by JVM
+
+Garbage Collection cannot be forced; it can only be requested, and JVM decides when to execute it.
+------------------------------------------------------------------------------------
 
 What is OutOfMemoryError?
+-
+OutOfMemoryError occurs when JVM runs out of heap memory and cannot allocate memory for new objects.
+
+🔹 Reasons
+
+Creating too many objects
+Memory leak
+Insufficient heap size
+
+OutOfMemoryError occurs when JVM cannot allocate memory due to insufficient heap space.
+--------------------------------------------------------------------------------------------------
 
 What is StackOverflowError?
+-
+StackOverflowError occurs when the stack memory is exhausted.
+
+🔹 Main Reason
+
+Infinite or deep recursion
+Too many method calls without returning
+
+void show() {
+show(); // infinite recursion
+}
+
+
+mmi==StackOverflowError occurs when stack memory overflows due to infinite or excessive method calls.
+----------------------------------------------------------------------------------------------
 
 🔹 Exception Handling
+=================================================================================================================================
 
 What is exception?
+-
+An exception is an unexpected event that occurs during program execution and disrupts the normal flow of the program.
+----------------------------------------------------------------------------------------------
 
 Difference between checked and unchecked exception
+-
+exception vs non exception
+| Checked Exception                             | Unchecked Exception                                     |
+| --------------------------------------------- | ------------------------------------------------------- |
+| Checked at **compile time**                   | Checked at **runtime**                                  |
+| Must be handled using **try-catch or throws** | Handling is optional                                    |
+| Extends **Exception** class                   | Extends **RuntimeException**                            |
+| Compiler forces handling                      | Compiler does not force                                 |
+| Examples: `IOException`, `SQLException`       | Examples: `NullPointerException`, `ArithmeticException` |
+
+Checked exceptions are verified at compile time, while unchecked exceptions occur at runtime.
+------------------------------------------------------------------------------------------------------
+
 
 Difference between Error and Exception
+| Error                                              | Exception                                       |
+| -------------------------------------------------- | ----------------------------------------------- |
+| Occurs due to **system failure**                   | Occurs due to **program logic**                 |
+| Cannot be handled                                  | Can be handled                                  |
+| Occurs at **runtime**                              | Can occur at compile or runtime                 |
+| Not recoverable                                    | Recoverable                                     |
+| Examples: `OutOfMemoryError`, `StackOverflowError` | Examples: `IOException`, `NullPointerException` |
+
+Errors are serious system problems that cannot be handled, while exceptions are runtime issues that can be handled.
+---------
 
 What is try-catch-finally?
+--
+try–catch–finally is used to handle exceptions in Java.
+
+🔹 try
+Contains code that may cause exception
+
+🔹 catch
+Handles the exception
+
+🔹 finally
+Always executes
+
+Used for resource cleanup
+
+🔹 Example
+try {
+int a = 10 / 0;
+} catch (Exception e) {
+System.out.println("Exception handled");
+} finally {
+System.out.println("Finally block executed");
+}
+
+try handles risky code, catch handles exception, and finally executes whether exception occurs or not.
+-------------------------------------------------------------------------------------------------------
+
 
 Can we have multiple catch blocks?
+--
+Yes, we can have multiple catch blocks in Java.
 
+🔹 Rules
+
+Used to handle different types of exceptions
+Parent exception must be written after child exception
+Otherwise, compiler error occurs
+
+🔹 Example
+try {
+int a = 10 / 0;
+} catch (ArithmeticException e) {
+System.out.println("Arithmetic Exception");
+} catch (Exception e) {
+System.out.println("General Exception");
+}
+
+Yes, multiple catch blocks are allowed, but child exceptions must come before parent exceptions.
 Can we write try without catch?
+------------------------------------------------------------------------------------------------
 
 What happens if exception occurs in finally?
+---
+If an exception occurs inside the finally block, that exception overrides any previous exception.
+
+🔹 Explanation
+
+Even if exception occurs in try or catch
+If finally throws an exception
+JVM considers finally exception only
+
+🔹 Example
+try {
+int a = 10 / 0;
+} finally {
+int b = 10 / 0;
+}
+
+
+👉 Output: ArithmeticException from finally block
+
+If an exception occurs in finally, it suppresses the original exception and finally exception is thrown.
+-------------------------------------------------------------------------------------------------
 
 What is throw vs throws?
+---
+throw vs throws
+| `throw`                                   | `throws`                              |
+| ----------------------------------------- | ------------------------------------- |
+| Used to **explicitly throw an exception** | Used to **declare exception**         |
+| Used inside method body                   | Used in method signature              |
+| Throws **one exception at a time**        | Can declare **multiple exceptions**   |
+| Used to create custom exception           | Used to pass exception responsibility |
 
+
+Example
+
+throw
+throw new ArithmeticException("Error");
+
+throws
+void readFile() throws IOException {
+}
+
+throw is used to explicitly throw an exception, while throws is used to declare exceptions.
+---------------------------------------------------------------------------------------
 Can we create custom exception?
+-
+Yes, we can create a custom exception in Java.
+
+🔹 How?
+
+By extending the Exception class
+or
+
+By extending the RuntimeException class
+
+🔹 Example
+class AgeException extends Exception {
+AgeException(String msg) {
+super(msg);
+}
+}
+
+Yes, custom exceptions can be created by extending Exception or RuntimeException.
+------------------------------------------------------------------------------------------------
 
 🔹 Collections Framework (VERY IMPORTANT 🔥)
+===============================================================================================
 
 What is Collection Framework?
+---
+The Collection Framework in Java is a set of classes and interfaces used to store, manipulate,
+and manage groups of objects.
+
+🔹 It provides:
+Ready-made data structures
+Interfaces like List, Set, Queue, Map
+
+Classes like ArrayList, LinkedList, HashSet, HashMap
+
+The Collection Framework provides predefined classes and interfaces to store
+and manipulate groups of objects efficiently.
+---------------------------------------------------------------------------------------------------------
 
 Difference between Array and ArrayList
+-
+array vs arrayList
+| Array                               | ArrayList               |
+| ----------------------------------- | ----------------------- |
+| Fixed size                          | Dynamic size            |
+| Can store **primitive and objects** | Stores **objects only** |
+| Faster                              | Slightly slower         |
+| Length is fixed                     | Size can grow or shrink |
+| No built-in methods                 | Provides many methods   |
+
+mmi==Array is fixed-size, while ArrayList is dynamic and provides built-in methods.
+--------------------------------------------------------------------------------------------------
 
 Difference between ArrayList and LinkedList
+-
+arraylist vs linklist
+| ArrayList                          | LinkedList                        |
+| ---------------------------------- | --------------------------------- |
+| Uses **dynamic array**             | Uses **doubly linked list**       |
+| Faster in **random access**        | Slower in random access           |
+| Slower insertion/deletion (middle) | Faster insertion/deletion         |
+| Uses less memory                   | Uses more memory                  |
+| Better for search operations       | Better for frequent insert/delete |
+
+ArrayList is better for searching, while LinkedList is better for frequent insertion and deletion.
+----------------------------------------------------------------------------------------
 
 Difference between List, Set, and Map
+--l
+list vs set vs map
+| List                            | Set                            | Map                                |
+| ------------------------------- | ------------------------------ | ---------------------------------- |
+| Allows **duplicate values**     | Does **not allow duplicates**  | Stores data in **key–value pairs** |
+| Maintains insertion order       | No insertion order (generally) | No duplicate keys                  |
+| Accessed by index               | No index                       | Accessed by key                    |
+| Examples: ArrayList, LinkedList | Examples: HashSet, TreeSet     | Examples: HashMap, TreeMap         |
+
+List allows duplicates, Set stores unique values, and Map stores data as key–value pairs.
+--------------------------------------------------------------------------------------------------------------
 
 Difference between HashMap and Hashtable
+-
+hashmap vs hashtable
+| HashMap                                          | Hashtable                            |
+| ------------------------------------------------ | ------------------------------------ |
+| Not synchronized                                 | Synchronized                         |
+| Not thread-safe                                  | Thread-safe                          |
+| Allows **one null key and multiple null values** | Does **not allow null key or value** |
+| Faster                                           | Slower                               |
+| Introduced in Java 1.2                           | Legacy class (Java 1.0)              |
+
+HashMap is non-synchronized and faster, while Hashtable is synchronized and slower.
+-----------------------------------------------------------------------------------------------------
 
 Difference between HashMap and TreeMap
+=
+| HashMap                         | TreeMap                            |
+| ------------------------------- | ---------------------------------- |
+| Does **not maintain order**     | Maintains **sorted order of keys** |
+| Faster                          | Slower                             |
+| Allows **one null key**         | Does **not allow null key**        |
+| Based on **hash table**         | Based on **Red-Black Tree**        |
+| Used when order is not required | Used when sorted data is required  |
+
+HashMap stores data without order, while TreeMap stores data in sorted order of keys.
+---------------------------------------------------------------
 
 Difference between HashSet and TreeSet
+-
+| HashSet                     | TreeSet                           |
+| --------------------------- | --------------------------------- |
+| Does **not maintain order** | Maintains **sorted order**        |
+| Faster                      | Slower                            |
+| Allows **one null value**   | Does **not allow null value**     |
+| Based on **hash table**     | Based on **Red-Black Tree**       |
+| Best for fast searching     | Best when sorted data is required |
+
+HashSet stores elements without order, while TreeSet stores elements in sorted order.
+---------------------------------------------------------------------------------------
 
 Why HashMap allows one null key?
+--
+HashMap allows one null key because it stores keys using hash values, and null is treated as a special case with hash value 0.
 
+🔹 Explanation
+
+HashMap internally calls hashCode() on keys
+For null, no hashCode() exists
+So HashMap assigns hash = 0 for null key
+Only one null key is allowed to avoid ambiguity
+
+HashMap allows one null key because it treats null as a special case with hash value zero.
+------------------------------------------------------------------------------------------------
 What is Iterator?
+-
+An Iterator is an interface used to traverse (iterate) elements of a collection one by one.
+
+Key points
+
+Works with Collection object
+Supports forward direction only
+
+Provides methods:
+hasNext()
+next()
+remove()
+
+Iterator is used to traverse collection elements safely one by one.
+--------------------------------------------------------------------------------------------------
 
 Difference between Iterator and ListIterator
+-
+iterator vs listIterator
+| Iterator                             | ListIterator                          |
+| ------------------------------------ | ------------------------------------- |
+| Used with all Collections            | Used only with List                   |
+| Moves in **one direction (forward)** | Moves in **both directions**          |
+| Can remove elements                  | Can add, remove, and update           |
+| Methods: `hasNext()`, `next()`       | Methods: `hasNext()`, `hasPrevious()` |
+| No index access                      | Supports index-based traversal        |
+
+Iterator supports one-way traversal, while ListIterator supports both forward and backward
+traversal with more operations.
+---------------------------------------------------------------------------------------------------
 
 What is fail-fast and fail-safe iterator?
+-
+Fail-Fast Iterator
+Throws ConcurrentModificationException
+When collection is modified during iteration
+Works on original collection
+
+Examples:
+ArrayList, HashMap, HashSet
+
+🔹 Fail-Safe Iterator
+Does not throw exception
+Works on copy of collection
+Modifications do not affect iteration
+
+Examples:
+ConcurrentHashMap, CopyOnWriteArrayList
+
+mmi==Fail-fast iterator throws exception on modification, 
+while fail-safe iterator works on a copy and does not throw exception.
+-----------------------------------------------------------------------------------------------------------
 
 How HashMap works internally?
+-
+
+✅ Interview Answer
+
+HashMap works using hashing technique.
+
+🔹 Internal Working
+
+1️⃣ When we put a key–value pair:
+
+map.put(key, value);
+
+
+2️⃣ HashMap calls:
+
+hashCode() → key
+
+
+3️⃣ Hash value is converted into index (bucket)
+
+4️⃣ Data is stored as Node (Entry) in bucket:
+
+(key, value, hash, next)
+
+
+5️⃣ If two keys generate same index → collision occurs
+
+🔹 Collision Handling
+
+HashMap uses LinkedList
+
+From Java 8 onwards → converts to Balanced Tree (Red-Black Tree) when threshold exceeds
+
+🔹 Retrieval (get(key))
+
+HashMap again calculates hash
+
+Goes to same bucket
+
+Uses equals() to find exact key
+
+mmi==HashMap stores data using hashCode and equals; in case of collision, it uses LinkedList or Red-Black Tree (Java 8+).
+----------------------------------------------------------------------------------------------------------------
 
 What is load factor?
+--
+Load factor in HashMap defines when the HashMap should increase its capacity (resize).
+
+🔹 Explanation
+
+Default load factor = 0.75
+
+It means:
+
+When 75% of buckets are filled
+
+HashMap performs rehashing
+
+🔹 Formula
+Threshold = Capacity × Load Factor
+
+⭐ One-line interview punch
+
+Load factor decides when HashMap should resize to maintain performance.
+-----------------------------------------------------------------------------------------------------------------
 
 🔹 Multithreading (Important)
+=======================================================================================================
 
 What is thread?
+-
+A thread is a lightweight unit of execution that runs inside a process.
 
+🔹 Explanation
+
+A program can have multiple threads
+
+Threads execute tasks simultaneously
+
+Improves performance and responsiveness
+
+⭐ One-line interview punch
+
+A thread is a lightweight process that executes a part of a program independently.
+-------------------------------------------------------------------------
 Difference between process and thread
+| Process                          | Thread                     |
+| -------------------------------- | -------------------------- |
+| Independent program in execution | Sub-part of a process      |
+| Has separate memory              | Shares memory with process |
+| Heavyweight                      | Lightweight                |
+| Slower context switching         | Faster context switching   |
+| More resource usage              | Less resource usage        |
+
+A process is an independent program, while a thread is a lightweight unit within a process.
+---------------------------------------------------------------------------------
 
 How to create thread in Java?
+-
+There are two ways to create a thread in Java:
 
-Difference between Thread class and Runnable interface
+ 1 by extending thread class
+class MyThread extends Thread {
+public void run() {
+System.out.println("Thread running");
+}
+}
+
+2 the implement runnable interface
+class MyThread implements Runnable {
+public void run() {
+System.out.println("Thread running");
+}
+}
+
+Threads in Java can be created by extending Thread class or implementing Runnable interface.
+-------------------------------------------------------------------------------------------------
+
+Difference between Thread class and Runnable interface 
+-
+Answer: Difference between Thread class and Runnable interface
+| Thread Class                | Runnable Interface         |
+| --------------------------- | -------------------------- |
+| Extends `Thread`            | Implements `Runnable`      |
+| Cannot extend another class | Can extend another class   |
+| Less flexible               | More flexible              |
+| Object itself is a thread   | Object is task, not thread |
+| Uses more memory            | Uses less memory           |
+
+⭐ One-line interview punch
+
+Runnable is preferred over Thread because it supports multiple inheritance and better design.
+------------------------------------------------------------------------------------------------------------
 
 What is synchronization?
+-
+Synchronization is a mechanism used to control access of multiple threads to shared resources.
+
+🔹 Purpose
+
+Prevents data inconsistency
+
+Allows only one thread at a time to access critical section
+
+⭐ One-line interview punch
+
+Synchronization ensures that only one thread accesses shared data at a time.
+----------------------------------------------------------------------------------------------
 
 What is deadlock?
+-
+Deadlock is a situation where two or more threads are permanently blocked, because each thread is waiting for a resource held by another thread.
+
+🔹 Purpose / Problem
+
+Occurs due to improper synchronization
+
+Threads keep waiting forever
+
+Program hangs (no execution further)
+
+🧠 Simple Example
+
+Thread A → holds Resource 1 → waiting for Resource 2
+Thread B → holds Resource 2 → waiting for Resource 1
+
+➡️ No thread can proceed → DEADLOCK
+
+⭐ One-line interview punch
+
+Deadlock occurs when two or more threads wait indefinitely for resources held by each other.
+
+💡 Real-life example
+
+Two people:
+
+Person A has key of Room 1, wants Room 2
+
+Person B has key of Room 2, wants Room 1
+
+👉 Both wait forever 😵‍💫
+
+If you want, next we can do 🔥
+
+Deadlock conditions (very important)
+
+How to prevent deadlock
+
+Deadlock vs Starvation
+
+Java deadlock code example
+------------------------------------------------------------------------------------------------
+
 
 What is race condition?
+-
+Race condition is a situation where multiple threads access and modify shared data at the same time, and the final result depends on the order of execution of threads.
 
+🔹 Problem
+
+Multiple threads run concurrently
+
+Shared variable gets inconsistent value
+
+Output becomes unpredictable
+
+🧠 Simple Example
+
+Two threads updating same variable:
+
+count = count + 1;
+
+
+Thread A reads → 5
+Thread B reads → 5
+
+Both update → 6
+
+❌ Expected: 7
+✅ Actual: 6
+
+➡️ This is race condition
+
+⭐ One-line interview punch
+
+Race condition occurs when multiple threads access shared data simultaneously and the result depends on execution timing.
+
+🔥 Key point
+
+Race condition happens due to:
+
+Lack of synchronization
+
+Shared mutable data
+---------------------------------------------------------------------------------------------
 Difference between sleep() and wait()
+| Point           | sleep()                                | wait()                                   |
+| --------------- | -------------------------------------- | ---------------------------------------- |
+| Package         | Thread class                           | Object class                             |
+| Lock            | ❌ Does **not release** lock            | ✅ **Releases** lock                      |
+| Usage           | Pause thread for fixed time            | Used for inter-thread communication      |
+| Synchronization | Can be used without synchronized block | Must be called inside synchronized block |
+| Wake up         | Automatically after time               | By `notify()` / `notifyAll()`            |
+| Purpose         | Delay execution                        | Thread coordination                      |
+
+sleep()
+
+Pauses current thread for given time
+
+Thread keeps the lock
+
+Used for timing
+
+Thread.sleep(1000);
+
+🔹 wait()
+
+Makes thread go to waiting state
+
+Releases lock
+
+Waits until notify is called
+
+synchronized(obj){
+obj.wait();
+}
+
+⭐ One-line interview punch
+
+sleep() pauses execution without releasing lock, whereas wait() releases lock and waits for notification.
+----------------------------------------------------------------------------------------------------------------
 
 Difference between start() and run()
+-| Point          | start()                    | run()                        |
+| -------------- | -------------------------- | ---------------------------- |
+| Thread         | Creates **new thread**     | No new thread created        |
+| Execution      | Runs concurrently          | Runs like normal method      |
+| JVM role       | JVM calls run() internally | JVM not involved             |
+| Multithreading | ✅ Yes                      | ❌ No                         |
+| Call           | Called once per thread     | Can be called multiple times |
+
+🔹 start()
+
+Creates a separate thread
+
+JVM allocates new stack
+
+Internally calls run()
+
+Thread t = new Thread();
+t.start();
+
+
+➡️ True multithreading
+
+🔹 run()
+
+Normal method call
+
+Executes in main thread
+
+t.run();
+
+
+➡️ No multithreading
+
+⭐ One-line interview punch
+
+start() creates a new thread and executes run() concurrently, whereas run() executes like a normal method in the same thread.
+
+🔥 Interview trap question
+
+Can we call run() directly?
+✅ Yes, but it will not create a new thread.
+-----------------------------------------------------------------------------------------------------------------------
 
 🔹 Java 8 Features (HIGH DEMAND 🔥)
+=======================================================================================================
 
 What are Java 8 features?
+-
+Java 8 introduced functional programming concepts to make code more readable, concise, and powerful.
+
+🔹 Main Java 8 Features
+
+Lambda Expression
+
+Functional Interface
+
+Stream API
+
+Method Reference
+
+Default & Static methods in interface
+
+Optional class
+
+Date & Time API
+
+forEach() method
+
+🧠 1️⃣ Lambda Expression
+
+Used to write shorter code for functional interfaces.
+
+(a, b) -> a + b
+
+
+➡️ Removes boilerplate code.
+
+🧠 2️⃣ Functional Interface
+
+Interface with only one abstract method.
+
+Example:
+
+Runnable
+Callable
+Comparator
+
+
+Custom:
+
+@FunctionalInterface
+interface Test {
+void show();
+}
+
+🧠 3️⃣ Stream API
+
+Used to process collections.
+
+list.stream()
+.filter(x -> x > 10)
+.map(x -> x * 2)
+.collect(Collectors.toList());
+
+
+Used for:
+
+filtering
+
+mapping
+
+sorting
+
+aggregation
+
+🧠 4️⃣ Method Reference
+
+Shortcut of lambda.
+
+System.out::println
+
+🧠 5️⃣ Default Method
+
+Interface can have method body.
+
+default void show() {
+System.out.println("Hello");
+}
+
+🧠 6️⃣ Optional Class
+
+Avoids NullPointerException.
+
+Optional<String> name = Optional.ofNullable(str);
+
+🧠 7️⃣ Date and Time API
+
+Thread-safe replacement of old Date class.
+
+LocalDate.now();
+LocalTime.now();
+LocalDateTime.now();
+
+⭐ One-line interview punch
+
+Java 8 introduced functional programming with lambda expressions, streams, and new date-time API to write clean and efficient code.
+-----------------------------------------------------------------------------------------
 
 What is lambda expression?
+-
+Lambda expression is a short way to write implementation of a functional interface without creating a separate class.
 
+🔹 Purpose
+
+Reduces boilerplate code
+
+Improves readability
+
+Supports functional programming
+
+🧠 Syntax
+(parameters) -> expression
+
+
+Example:
+
+(a, b) -> a + b
+
+🧠 Without Lambda
+Runnable r = new Runnable() {
+public void run() {
+System.out.println("Thread running");
+}
+};
+
+🧠 With Lambda
+Runnable r = () -> {
+System.out.println("Thread running");
+};
+
+
+✅ Clean
+✅ Short
+✅ Easy
+
+⚠️ Important Point
+
+Lambda works only with Functional Interface
+(Interface having exactly one abstract method)
+
+⭐ One-line interview punch
+
+Lambda expression provides a concise way to implement functional interfaces using expression-based syntax.
+
+🔥 Interview traps:
+
+Lambda cannot be used with normal interface
+
+Lambda does not create a new method
+
+Lambda supports only one abstract method
+-------------------------------------------------------------------------------------------
 What is functional interface?
+A functional interface is an interface that contains only one abstract method.
+
+🔹 Purpose
+
+Used to support lambda expressions
+
+Enables functional programming in Java
+
+Makes code short and readable
+
+🧠 Rule
+
+✅ Only one abstract method
+✅ Can have multiple default methods
+✅ Can have static methods
+
+🧠 Example
+@FunctionalInterface
+interface Test {
+void show();
+}
+
+
+✔ Valid functional interface
+
+❌ Invalid
+interface Test {
+void show();
+void display(); // ❌ two abstract methods
+}
+
+🧠 Built-in Functional Interfaces
+
+Runnable → run()
+
+Callable → call()
+
+Comparator → compare()
+
+Predicate → test()
+
+Function → apply()
+
+Consumer → accept()
+
+Supplier → get()
+
+⭐ One-line interview punch
+
+A functional interface is an interface with exactly one abstract method, used mainly with lambda expressions.
+
+🔥 Interview trap:
+
+@FunctionalInterface is optional
+
+But it helps compiler catch errors
+---------------------------------------------------------------------------------------
+
 
 What is Stream API?
 
