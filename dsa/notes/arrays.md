@@ -1,4 +1,5 @@
 Array:
+The array is linear data structure store 
 - Data structure
 - Stores multiple values of same type
 - Uses continuous memory
@@ -37,3 +38,42 @@ Search → O(n)
 Important Points:
 - Fixed size
 - Same data type only
+
+memory view
+| Index | Value | Memory |
+| ----- | ----- | ------ |
+| 0     | 10    | 100    |
+| 1     | 20    | 104    |
+| 2     | 30    | 108    |
+| 3     | 40    | 112    |
+
+assuming int 4 byte
+
+advantage 
+faste access using index
+
+disadvantage
+fixed size
+insertion delection costly(because insertion and deletion element swapping)
+
+int vs integer
+
+int[]
+store actual value
+fast
+primitive data type
+less memory use 
+cannot store null
+
+Used in DSA
+✔ Used for performance
+
+integer[]
+slow 
+nonprimitive datatype 
+more memory use 
+store null 
+
+Collections (ArrayList<Integer>)
+Frameworks (Spring, Hibernate)
+Need null values

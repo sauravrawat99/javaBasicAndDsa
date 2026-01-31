@@ -1625,8 +1625,99 @@ But it helps compiler catch errors
 
 
 What is Stream API?
+-
+Stream API is used to process collections of data in a functional and declarative way.
+
+It allows operations like filtering, mapping, sorting, and aggregation without modifying the original data.
+
+🔹 Purpose
+
+Process large data easily
+
+Write clean and readable code
+
+Support functional programming
+
+Perform operations in pipeline style
+
+🧠 Important Point
+
+Stream does not store data
+
+Stream does not change original collection
+
+Stream processes data one by one
+
+🧠 Example
+List<Integer> list = Arrays.asList(1,2,3,4,5);
+
+list.stream()
+.filter(n -> n % 2 == 0)
+.map(n -> n * 2)
+.forEach(System.out::println);
+
+
+Output:
+
+4
+8
+
+🔁 Stream Flow
+Collection → Stream → Operations → Result
+
+🔹 Types of Operations
+1️⃣ Intermediate Operations
+
+(return stream)
+
+filter()
+
+map()
+
+sorted()
+
+distinct()
+
+limit()
+
+2️⃣ Terminal Operations
+
+(produce result)
+
+forEach()
+
+collect()
+
+reduce()
+
+count()
+
+findFirst()
+
+⭐ One-line interview punch
+
+Stream API provides a functional way to process collections using pipeline operations 
+without modifying the original data.
+
+Interview traps:
+
+Stream can be used only once
+
+Streams are lazy (execute only on terminal operation)
+
+Stream ≠ Collection
+-------------------------------------------------------------------------------------
 
 Difference between map() and filter()
+-
+| Point       | map()             | filter()                |
+| ----------- | ----------------- | ----------------------- |
+| Purpose     | Transforms data   | Selects data            |
+| Operation   | Modifies elements | Checks condition        |
+| Return      | New value         | true / false            |
+| Output size | Same as input     | May be smaller          |
+| Use case    | Change element    | Remove unwanted element |
+
 
 What is Optional?
 
