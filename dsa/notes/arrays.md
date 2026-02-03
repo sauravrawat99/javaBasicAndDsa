@@ -59,20 +59,21 @@ insertion delection costly(because insertion and deletion element swapping)
 int vs integer
 
 int[]
-store actual value
-fast
-primitive data type
-less memory use 
-cannot store null
+Primitive data type
+Stores actual values
+Faster
+Less memory
+Cannot store null
 
 Used in DSA
 ✔ Used for performance
 
 integer[]
-slow 
-nonprimitive datatype 
-more memory use 
-store null 
+Wrapper class
+Stores object references
+Slower
+More memory
+Can store null 
 
 Collections (ArrayList<Integer>)
 Frameworks (Spring, Hibernate)
