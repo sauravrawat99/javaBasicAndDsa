@@ -11,25 +11,23 @@ public class xToThePowe {
         return x * xTOthe(n - 1, x);
     }
     static int optimize(int n, int x) {
-
+//base case
         if (n == 0) {
             return 1;
         }
+        int half = optimize(n / 2 , x);
+   if (n%2 ==0){
+       return half*half;
+   }else {
+       return x*half*half;
+   }
 
-        int result = optimize(n / 2, x);
-        int result2 = result * result;
-
-        if (n % 2 != 0) {
-            result2 = x * result2;
-        }
-
-        return result2;
     }
 
 
     public static void main(String[] args) {
         int x = 2;
-        int n = 10;
+        int n = 4;
 
         System.out.println(xTOthe(n, x));
         System.out.println(optimize(n, x));
