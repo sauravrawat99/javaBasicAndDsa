@@ -1,292 +1,182 @@
-3 MONTH JAVA + DSA ROADMAP (TEXT FORMAT)
+PART 1 — COMPLETE DSA ROADMAP (ZERO → INTERVIEW READY)
 
-RULES
+⏰ Duration: 3.5 Months
+Daily: 1.5–2 Hours Enough
 
-Daily 3–4 hours enough
-
-Concept + code + questions compulsory
-
-Copy nahi, khud likh kar samajhna
-
-Har week revision zaroor
-
-MONTH 1 – FOUNDATION + CORE LOGIC
-
-WEEK 1 – TIME & ARRAYS
-Day 1–2
+✅ PHASE 1 — FOUNDATION (Month 1)
+🔹 Week 1: Basics + Arrays
 
 Time & Space Complexity
 
-Big O notation
+Big O
 
-Best / Average / Worst case
+Arrays (1D, 2D)
 
-Day 3–5
+Max/Min
 
-Arrays basics
+Reverse
 
-Traversal
+Missing Number
 
-Max / Min
+Prefix Sum
 
-Reverse array
+🎯 Goal: Logic + Loop Control
 
-Second largest
+🔹 Week 2: Strings + Basic Hashing
 
-Missing number
+String Methods
 
-Day 6–7
-
-2D Arrays
-
-Matrix traversal
-
-Row sum / Column sum
-
-Diagonal sum
-
-WEEK 2 – STRINGS + HASHING
-
-Day 8–10
-
-String basics
-
-charAt
-
-length
-
-substring
-
-toCharArray
-
-Day 11–13
-
-HashMap basics
-
-Frequency of characters
-
-First non-repeating character
-
-Duplicate characters
-
-Day 14
+Palindrome
 
 Anagram
 
-Valid anagram
+Frequency
 
-Basic group anagrams
+HashMap Intro
 
-WEEK 3 – SEARCHING & SORTING
+🎯 Goal: Pattern Recognition
 
-Day 15–16
+🔹 Week 3: Searching & Sorting
 
-Linear search
+Linear Search
 
-Binary search
+Binary Search
 
-Day 17–19
+Bubble Sort
 
-Bubble sort
+Selection Sort
 
-Selection sort
+Insertion Sort
 
-Insertion sort
+Merge Sort
 
-Day 20–21
+Quick Sort
 
-Merge sort
+🎯 Goal: Optimization Thinking
 
-Quick sort
+🔹 Week 4: Recursion + Backtracking
 
-Divide and Conquer concept
+Base Case
 
-WEEK 4 – RECURSION
+Print Problems
 
-Day 22–24
+Factorial/Fibo
 
-Recursion basics
+Recursion on Array/String
 
-Print numbers
+N-Queen (Intro)
 
-Sum of numbers
+🎯 Goal: Thinking in Subproblems
 
-Factorial
+✅ PHASE 2 — DATA STRUCTURES (Month 2)
+🔹 Week 5: Linked List
 
-Fibonacci
+Singly/Doubly
 
-Day 25–27
+Reverse
 
-Recursion on arrays
+Cycle
 
-Recursion on strings
+Middle
 
-Day 28
+Delete Node
 
-Backtracking introduction
+🔹 Week 6: Stack & Queue
 
-MONTH 2 – DATA STRUCTURES
+Stack (Array/LL)
 
-WEEK 5 – LINKED LIST
+Valid Parenthesis
 
-Singly linked list
+NGE
 
-Insert
+Queue/Circular Queue/Deque
 
-Delete
+🔹 Week 7: Hashing + Sliding Window
 
-Reverse linked list
+HashMap Deep
 
-Middle of linked list
+Subarray Sum
 
-Cycle detection
+Longest Substring
 
-WEEK 6 – STACK & QUEUE
+Two Pointer
 
-STACK
+🔹 Week 8: Trees
 
-Stack using array
+Binary Tree
 
-Stack using linked list
+Traversals
 
-Valid parentheses
+Height
 
-Next greater element
+Diameter
 
-QUEUE
+LCA
 
-Simple queue
+✅ PHASE 3 — ADVANCED (Month 3)
+🔹 Week 9: BST + Heap
 
-Circular queue
+BST Ops
 
-Deque
-
-WEEK 7 – HASHING (VERY IMPORTANT)
-
-HashMap deep
-
-HashSet
-
-Subarray sum = k
-
-Longest substring without repeating characters
-
-Sliding window technique
-
-WEEK 8 – TREES
-
-Binary tree
-
-Tree traversals (pre, in, post)
-
-Level order traversal
-
-Height of tree
-
-Diameter of tree
-
-Lowest common ancestor
-
-MONTH 3 – ADVANCED DSA
-
-WEEK 9 – BST + HEAP
-
-Binary Search Tree
-
-Insert / Search / Delete
-
-Heap basics
+Heap
 
 Priority Queue
 
-K largest elements
+K Largest
 
-WEEK 10 – GREEDY + TRIE
+🔹 Week 10: Greedy + Trie
 
-GREEDY
+Activity Selection
 
-Activity selection
+Knapsack
 
-Fractional knapsack
+Trie Insert/Search
 
-TRIE
+🔹 Week 11: Graph
 
-Insert word
+BFS/DFS
 
-Search word
+Cycle
 
-Prefix problems
+Topo Sort
 
-WEEK 11 – GRAPH
+Dijkstra
 
-Graph representation
-
-BFS
-
-DFS
-
-Cycle detection
-
-Topological sort
-
-Shortest path
-
-WEEK 12 – DYNAMIC PROGRAMMING
-
-Recursion to DP
+🔹 Week 12: Dynamic Programming
 
 Memoization
 
 Tabulation
 
-0/1 Knapsack
+Knapsack
 
-Longest Increasing Subsequence
+LIS
 
-DP on strings
+DP on Strings
 
-DAILY STUDY FORMAT
+✅ PHASE 4 — PRACTICE & MASTERY (15 Days)
 
-Learn concept – 1 hour
+Revise All Topics
 
-Write code yourself – 1 hour
+2–3 Mixed Sets Daily
 
-Practice 5–6 questions – 1 hour
+Mock Tests
 
-Revision – 30 minutes
+🎯 Goal: Speed + Confidence
 
-DSA NOTEBOOK FORMAT
+📒 DAILY DSA STUDY METHOD (MOST IMPORTANT)
 
-For every topic write:
+Har din:
 
-Concept
+1️⃣ Learn Concept (20 min)
+2️⃣ Write Code (40 min)
+3️⃣ Solve 3–4 Q (40 min)
+4️⃣ Revise (15 min)
 
-Approach
 
-Dry run
+No skip.
 
-Code
-
-Time and Space Complexity
-
-QUESTIONS PRACTICE
-
-LeetCode (Easy then Medium)
-
-GeeksforGeeks practice
-
-Target:
-
-100 Easy
-
-50 Medium
-
-FINAL NOTE
-
-If you follow this roadmap honestly:
-
-Logic will improve
-
-DSA fear will go
-
-Interview confidence will come
+🎯 PRACTICE TARGET
+Platform	Target
+LeetCode	120+
+GFG	80+

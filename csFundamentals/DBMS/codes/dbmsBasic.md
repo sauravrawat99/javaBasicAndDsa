@@ -5,12 +5,12 @@ and manipulate databases in an organized and secure manner.
 
 Why DBMS is Used?
 
-** without use dbms 
+** without use DBMS 
 .data manage difficult
 .high duplicate
 .nothing security
 
-**advantage of dbms
+**advantage of DBMS
 .Data Security
 .Data Consistency
 .Data Integrity

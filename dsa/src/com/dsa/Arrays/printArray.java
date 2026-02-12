@@ -129,6 +129,6 @@ Time: O(n)
 
 🔥 Interview One-Line Summary
 
-We perform basic array operations like traversal, finding min/max, reversing using two pointers, and checking if the array is sorted,
-*  all with optimal time and constant space complexity.
+We perform basic array operations like traversal, finding min/max, reversing using two pointers,
+*  and checking if the array is sorted,all with optimal time and constant space complexity.
 * */
