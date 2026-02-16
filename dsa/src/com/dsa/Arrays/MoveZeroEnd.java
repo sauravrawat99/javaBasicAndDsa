@@ -11,7 +11,7 @@
 
 
 package com.dsa.Arrays;
-class MovesZeroEnd{
+ class MovesZeroEnd{
     static void moveZeros(int[] arr) {
 
         int index = 0;

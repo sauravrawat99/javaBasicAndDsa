@@ -44,7 +44,7 @@ public class LinkList {
     Node head;
     Node tail;
 
-     static class Node {
+    static class Node {
         int data;
         Node next;
 
@@ -59,7 +59,6 @@ public class LinkList {
 
         Node newNode = new Node(data);
 
-        // if list is empty
         if (head == null) {
             head = tail = newNode;
             return;
@@ -74,7 +73,6 @@ public class LinkList {
 
         Node newNode = new Node(data);
 
-        // if list is empty
         if (head == null) {
             head = tail = newNode;
             return;
@@ -83,14 +81,41 @@ public class LinkList {
         tail.next = newNode;
         tail = newNode;
     }
-//    insert at position
-    void AddPosition(int index,int data){
-         Node newNode = new Node(data);
-         if(index==1){
-             insertAtStart(data);
-             return;
-         }
-         Node temp=
+
+    // Insert at Position (1 based index)
+    void addPosition(int index, int data) {
+
+        Node newNode = new Node(data);
+
+        // insert at start
+        if (index == 1) {
+            insertAtStart(data);
+            return;
+        }
+
+        Node temp = head;
+        int count = 1;
+
+        // move to (index-1) node
+        while (temp != null && count < index - 1) {
+            temp = temp.next;
+            count++;
+        }
+
+        // invalid index
+        if (temp == null) {
+            System.out.println("Invalid Position");
+            return;
+        }
+
+        // insert
+        newNode.next = temp.next;
+        temp.next = newNode;
+
+        // if inserted at last update tail
+        if (newNode.next == null) {
+            tail = newNode;
+        }
     }
 
     // Print List
@@ -115,6 +140,8 @@ public class LinkList {
 
         list.insertAtEnd(3);
         list.insertAtEnd(4);
+
+        list.addPosition(3, 99);
 
         list.printList();
     }

@@ -1,6 +1,6 @@
 package com.dsa.Arrays;
 
-class PrintArray {
+ class PrintArray {
 
     // Print array elements
     static void print(int[] arr) {
