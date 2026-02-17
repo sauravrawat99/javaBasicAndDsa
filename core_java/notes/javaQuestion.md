@@ -144,6 +144,12 @@ the main method is static because jvm need to without creating an object
 5. 
 So, main() is made static to allow direct access by JVM using class name.
 
+Interview Perfect Answer (Yaad karlo)
+
+The main method is static because JVM needs to call it without creating an object of the class.
+Since static methods belong to the class rather than an instance,
+the JVM can start program execution immediately after class loading.
+
 mmi=> The main method is static so that JVM can call it without creating an object.
 -------------------------------------------------------------------------------------------------------
 
