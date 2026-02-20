@@ -10,12 +10,14 @@ public class SegregateZerosAndOne {
         for (int right = 0; right < arr.length; right++) {   // ← yahan -1 hataya
 
             if (arr[right] == 0) {
+
                 // 0 mila → ise left position pe le aao (swap)
+
                 int temp = arr[left];
                 arr[left] = arr[right];
                 arr[right] = temp;
-
-                left++;   // ab left aage badha do (next 0 yahan aayega)
+                left++;
+                // ab left aage badha do (next 0 yahan aayega)
             }
             // agar arr[right] == 1 hai → kuch nahi karna, right aage badhega
         }
