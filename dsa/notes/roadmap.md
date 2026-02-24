@@ -140,3 +140,114 @@ Phase,Topic,Priority,Problems,Time
 2,LinkedList + Stack/Queue + Two Pointers + Sliding Window,★★★★,120–180,6–10 weeks
 3,Binary Tree + BST + Heaps + Graphs,★★★★,120–200,8–12 weeks
 4,Greedy + Backtracking + DP + Tries,★★★★★,150–300,10–20 weeks.
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Question ko 2–3 baar dhyan se padh
+
+👉 Jaldi code likhne ki galti mat karo.
+Pehle ye samjho:
+
+Input kya hai?
+
+Output kya chahiye?
+
+Edge case kya ho sakta hai?
+
+Example:
+“Second largest element”
+– Agar sab elements equal ho to?
+– Agar array length 1 ho to?
+
+Ye sochna hi tumhe interview level banata hai.
+
+2️⃣ Pehle brute force socho (Simple dimaag se)
+
+Bhai tum beginner ho, to seedha optimal mat socho.
+
+Example:
+
+Largest element → sort kar do (O(n log n))
+
+Phir socho: kya bina sort ke ho sakta hai? (O(n))
+
+👉 Always:
+Brute force → Better → Optimal
+
+3️⃣ Pattern identify karo 🔍
+
+Har question naya nahi hota.
+
+Common patterns:
+
+Two Pointer
+
+Sliding Window
+
+HashMap
+
+Binary Search
+
+Recursion
+
+Prefix Sum
+
+Agar tum pattern pe focus karoge, to 100 question solve karne ke baad dimaag automatically recognize karega.
+
+4️⃣ Dry Run karo (Bahut important)
+
+Paper pe example chalao.
+
+Example:
+Array = [2, 7, 11, 15]
+Target = 9
+
+Step by step likho:
+2 → 9-2=7
+7 mil gaya ✔
+
+Dry run bina code likhe karo.
+
+5️⃣ Code likho simple language me
+
+Tum Java comfortable ho, to Java me hi likho.
+Shortcuts mat use karo jab tak clear na ho.
+
+Readable code likho.
+
+6️⃣ Time Complexity socho
+
+Har question ke baad 3 sawal pucho:
+
+Time complexity?
+
+Space complexity?
+
+Kya better kar sakte hain?
+
+Interview me ye poocha hi jaata hai.
+
+🚀 Tumhare liye Daily DSA Routine
+
+Since tum TCS NQT ki tayari kar rahe ho:
+
+Daily:
+
+✅ 2 easy
+✅ 1 medium
+✅ Previous mistake revise
+
+Aur har Sunday:
+❗️ Sirf revision
+
+Golden Rule
+
+❌ Question dekh ke solution mat dekho
+❌ 5 minute me give up mat karo
+
+✅ 30 minute tak struggle karo
+✅ Agar nahi hua to hint lo
+✅ Fir khud implement karo
+
+Struggle hi growth hai bhai.
