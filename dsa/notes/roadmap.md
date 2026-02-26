@@ -1,3 +1,27 @@
+1. Arrays
+2. Time & Space Complexity
+3. Sorting + Binary Search
+4. 2D Arrays
+5. Strings
+6. Recursion
+7. Divide & Conquer
+8. Backtracking
+9. Linked List
+10. Stack
+11. Queue
+12. Hashing
+13. Trees
+14. BST
+15. Heaps
+16. Greedy
+17. Graphs
+18. DP
+19. Tries
+20. Segment Tree
+21. Bit Manipulation (advanced stage)
+
+
+
 Here is a realistic, up-to-date DSA Roadmap with Java (as of 2026) that works very well for:
 
 Campus placements
