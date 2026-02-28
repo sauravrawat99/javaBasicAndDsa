@@ -1,4 +1,4 @@
-package com.dsa.Arrays;
+package com.dsa.Searching;
 
 public class FindingFirstOccurrence {
 
